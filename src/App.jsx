@@ -5,11 +5,13 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-  const hello = <h1>Hello, world!</h1>
+  const helloName = (name) => {
+    return <h1>Hello, {name}!</h1>
+  }
 
   return (
     <>
-      {hello};
+      {helloName("Massimo")}
     </>
   )
 }
