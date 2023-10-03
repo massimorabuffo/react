@@ -11,7 +11,9 @@ function App() {
 
   return (
     <>
-      {helloName("Massimo")}
+      {helloName()}
+      
+      {/* Non passando alcun parametro alla funzione, in pagina avrò un semplice h1: "Hello, !" */}
     </>
   )
 }
