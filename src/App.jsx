@@ -11,9 +11,10 @@ function App() {
 
   return (
     <>
-      {helloName()}
-      
-      {/* Non passando alcun parametro alla funzione, in pagina avrò un semplice h1: "Hello, !" */}
+      {helloName(<h6>Massimo</h6>)}
+
+      {/* Passando come parametro un'espressione JSX, la funzione ritornerà a schermo una stringa che contine però le caratteristiche html del 
+      tag passato, il questo caso il tag <h6> mantiene la sua caratteristica di block-level tag. */}
     </>
   )
 }
