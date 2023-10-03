@@ -5,16 +5,13 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-  const helloName = (name) => {
-    return <h1>Hello, {name}!</h1>
+  const sum = (a, b) => {
+    return <h2>{a + b}</h2>
   }
 
   return (
     <>
-      {helloName(<h6>Massimo</h6>)}
-
-      {/* Passando come parametro un'espressione JSX, la funzione ritornerà a schermo una stringa che contine però le caratteristiche html del 
-      tag passato, il questo caso il tag <h6> mantiene la sua caratteristica di block-level tag. */}
+      {sum(3, 3)}
     </>
   )
 }
