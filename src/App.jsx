@@ -2,7 +2,7 @@ function Welcome({ name, age }) {
     return (
         <>
             {name ? <p>Welcome, {name}!</p> : <p>Please, insert a name!</p>}
-            <Age age={ age } />
+            { age > 18 ? <Age age={ age } /> : !age}
         </>
     )
 }
@@ -16,6 +16,6 @@ function Age({ age }) {
 }
 
 export function App() {
-    return <Welcome name={<strong>Massimo</strong>} age={26}/>
+    return <Welcome name={<strong>Massimo</strong>} age={18}/>
 }
 
