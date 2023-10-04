@@ -1,7 +1,9 @@
-function Hello() {
+import { Hello } from "./Hello"
+
+export function App() {
   return(
-    <>
-     <h2>Hello, world!</h2>
-     </>
+      <div>
+        <Hello />
+      </div>
   )
 }
