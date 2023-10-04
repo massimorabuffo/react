@@ -1,13 +1,12 @@
-import { Hello } from "./Hello"
+import { Hello, Message } from "./Hello"
 
 export function App() {
   return(
       <div>
-        {/* Ogni volta che uso il componente <Hello/> viene renderizzato il contenuto del suo "return" */}
-
         <Hello />
-        <Hello />
-        <Hello />
+        <Message/>
+        
+        {/* Posso renderizzare il componente <Message/> all'interno del componente <App/>, a patto di importarlo. */}
       </div>
   )
 }

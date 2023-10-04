@@ -7,6 +7,6 @@ export function Hello() {
     )
   }
 
-function Message() {
+export function Message() {
     return <p>What a beautiful day!</p>
 }
