@@ -1,4 +1,5 @@
 import { AlertClock } from "./AlertClock"
+import { handleTime } from "./AlertClock"
 
 function Welcome({ name, age }) {
     return (
@@ -20,6 +21,6 @@ function Age({ age }) {
 export function App() {
     return <>
             <Welcome name="John" age={18}/>
-            <AlertClock />
+            <AlertClock alertTime = {handleTime}/>
             </>
 }
