@@ -4,6 +4,6 @@ import { Counter } from './Counter.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Counter initialValue = {2} incrementAmount={3}/>
+    <Counter initialValue = {0} incrementAmount={1} decrementAmount={1}/>
   </React.StrictMode>,
 )
