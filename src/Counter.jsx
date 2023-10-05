@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Clock } from './Clock'
 
 export function Counter({initialValue, incrementAmount, decrementAmount}) {
     const [counter, setCounter] = useState(initialValue)
@@ -21,6 +22,7 @@ export function Counter({initialValue, incrementAmount, decrementAmount}) {
             <button onClick={handleIncrement}>Click to increment!</button>
             <button onClick={handleDecrement}>Click to decrement!</button>
             <button onClick={handleReset}>Click to reset!</button>
+            <Clock />
             </>
 }
 
