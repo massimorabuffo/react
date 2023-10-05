@@ -1,3 +1,5 @@
+import { AlertClock } from "./AlertClock"
+
 function Welcome({ name, age }) {
     return (
         <>
@@ -16,5 +18,8 @@ function Age({ age }) {
 }
 
 export function App() {
-    return <Welcome name="John" age={18}/>
+    return <>
+            <Welcome name="John" age={18}/>
+            <AlertClock />
+            </>
 }
