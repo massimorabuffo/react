@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Clock } from './Clock'
-import { MouseClicker } from './MouseClicker'
+import { MultiButton } from './MultiButton'
 
 export function Counter({initialValue, incrementAmount, decrementAmount}) {
     const [counter, setCounter] = useState(initialValue)
@@ -24,7 +24,7 @@ export function Counter({initialValue, incrementAmount, decrementAmount}) {
             <button onClick={handleDecrement}>Click to decrement!</button>
             <button onClick={handleReset}>Click to reset!</button>
             <Clock />
-            <MouseClicker name="one"/>
+            <MultiButton name1="one" name2="two" name3="three"/>
             </>
 }
 
