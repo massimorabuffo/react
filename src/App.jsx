@@ -1,13 +1,14 @@
-function Welcome({ name }) {
+function Welcome({ name = "unknown" }) {
     return (
         <>
-            {name ? <p>Welcome, {name}!</p> : <p>Please, insert a name!</p>}
+            <p>Welcome, {name}!</p>
         </>
     )
 }
+
 
 export function App() {
     return <Welcome />
 }
 
-// Se non passo alcun prop a <Welcome>, in pagina vedrò renderizzata semplicemente la stringa "Hello, !".
+// Se non passo alcun prop a <Welcome>, in pagina vedrò renderizzata la stringa "Hello, unknown!".
