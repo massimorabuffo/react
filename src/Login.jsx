@@ -24,12 +24,23 @@ function Login({login}) {
     login(data);
   }
 
+  function handleReset() {
+    setData((data) => {
+        return{
+            userName: '',
+            password: '',
+            remember: false,
+        }
+    })
+  }
+
   return <>
           <input type="text" name = 'userName' value = {data.userName} onChange={handleChange}/>
           <input type="password" name = 'password' value = {data.password} onChange={handleChange}/>
           <input type="checkbox" name = 'remember' checked = {data.remember} onChange={handleChange} />
           <label>Remember me</label>
           <button disabled={!data.userName || !data.password} onClick={handleLogin}>login</button>
+          <button onClick={handleReset}>reset</button>
          </>
 }
 
