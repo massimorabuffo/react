@@ -35,15 +35,19 @@ function Login({login}) {
   }
 
   return <>
-          <input type="text" name = 'userName' value = {data.userName} onChange={handleChange}/>
-          <input type="password" name = 'password' value = {data.password} onChange={handleChange}/>
-          <input type="checkbox" name = 'remember' checked = {data.remember} onChange={handleChange} />
-          <label>Remember me</label>
-          <button disabled={!data.userName || !data.password} onClick={handleLogin}>login</button>
-          <button onClick={handleReset}>reset</button>
+          <form onSubmit={handleLogin}>
+            <input type="text" name = 'userName' value = {data.userName} onChange={handleChange}/>
+            <input type="password" name = 'password' value = {data.password} onChange={handleChange}/>
+            <input type="checkbox" name = 'remember' checked = {data.remember} onChange={handleChange} />
+            <label>Remember me</label>
+            <button disabled={!data.userName || !data.password}>login</button>
+            <button onClick={handleReset}>reset</button>
+          </form>
          </>
 }
 
+// Un modo per evitare che il la pagina venga ricaricata quando si clicca il button potrebbe essere quello di aggiungere type = "button"
+// al button a riga 43.
 
 
 export default Login
