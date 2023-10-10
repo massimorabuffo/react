@@ -2,8 +2,17 @@ const UncontrolledLogin = () => {
     const handleFormSubmit = (event) => {
         event.preventDefault();
 
-     console.log(event.target.username.value)
-     // Credo che questo sia un modo non standandard per accedere ai dati del form.
+        const formData = new FormData(event.target);
+
+        const data = {
+            username: formData.get('username'),
+            password: formData.get('password'),
+            remember: formData.get('remember') === 'on' ? 'ON' : 'OFF',
+        }
+
+        console.log(data);
+        
+        // Usare l'API FormData è modo non standard di accedere ai dati del form.
     }
 
     return (
