@@ -34,8 +34,12 @@ function Login({login}) {
     })
   }
 
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+  }
+
   return <>
-          <form onSubmit={handleLogin}>
+          <form onSubmit={handleFormSubmit}>
             <input type="text" name = 'userName' value = {data.userName} onChange={handleChange}/>
             <input type="password" name = 'password' value = {data.password} onChange={handleChange}/>
             <input type="checkbox" name = 'remember' checked = {data.remember} onChange={handleChange} />
@@ -46,8 +50,8 @@ function Login({login}) {
          </>
 }
 
-// Un modo per evitare che il la pagina venga ricaricata quando si clicca il button potrebbe essere quello di aggiungere type = "button"
-// al button a riga 43.
+// Esercizio aggiornato usando il metodo preventDefault che viene spiegato nella lezione sugli uncontrolled forms, mentre questo esercizio
+// è classificato come controlled forms.
 
 
 export default Login
