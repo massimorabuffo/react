@@ -11,8 +11,11 @@ const UncontrolledLogin = () => {
         }
 
         console.log(data);
-        
-        // Usare l'API FormData è modo non standard di accedere ai dati del form.
+
+        // Il vantaggio rispetto al DOM API standard è una sintassi leggermente più pulita perché non c'è bisogno di dichiarare una
+        // variabile per ogni elemento del form. L'unico "svantaggio" che per ora vedo (nella lezione non si fanno accenni a svantaggi)
+        // può essere la necessità di usare l'op. ternario per accedere al valore di "session", poiché restituisce come valore
+        // 'on' oppure 'off', e non il nome dell'elemento.
     }
 
     return (
