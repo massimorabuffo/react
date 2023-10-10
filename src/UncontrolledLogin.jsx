@@ -2,16 +2,21 @@ const UncontrolledLogin = () => {
     const handleFormSubmit = (event) => {
         event.preventDefault();
 
-        const username = event.target.elements.namedItem('username').value;
-        const password = event.target.elements.namedItem('password').value;
-        const remember = event.target.elements.namedItem('remember').checked
-        
+        const formData = new FormData(event.target);
+
         const data = {
-            username, password, remember
+            username: formData.get('username'),
+            password: formData.get('password'),
+            remember: formData.get('remember') === 'on' ? 'ON' : 'OFF',
         }
 
-        // Ho evitato di creare un handler per disabilitare il login button quando gli input sono vuoti, poiché sarebbe divenuto molto simile
-        // ad un controlled form.
+        // const username = event.target.elements.namedItem('username').value;
+        // const password = event.target.elements.namedItem('password').value;
+        // const remember = event.target.elements.namedItem('remember').checked
+        
+        // const data = {
+        //     username, password, remember
+        // }
 
         console.log(data);
     }
