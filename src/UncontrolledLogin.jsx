@@ -2,7 +2,8 @@ const UncontrolledLogin = () => {
     const handleFormSubmit = (event) => {
         event.preventDefault();
 
-     console.log(event.target.elemnts)
+     console.log(event.target.username.value)
+     // Credo che questo sia un modo non standandard per accedere ai dati del form.
     }
 
     return (
