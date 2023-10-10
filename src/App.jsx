@@ -1,4 +1,5 @@
 import Login from "./Login"
+import UncontrolledLogin from "./UncontrolledLogin";
 
 const onLogin = (data) => {
   console.log(data);
@@ -6,7 +7,7 @@ const onLogin = (data) => {
 
 function App() {
   return <>
-          <Login login={onLogin}/>
+          <UncontrolledLogin />
          </>
 }
 
