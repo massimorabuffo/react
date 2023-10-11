@@ -1,6 +1,4 @@
-function Welcome({ name }) {
-    return <p>Welcome, {name}!</p>
-}
+import Welcome from "./Welcome";
 
 export function App() {
     return <Welcome name="Massimo" />
