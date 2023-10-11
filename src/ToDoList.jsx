@@ -13,6 +13,7 @@ const ToDoList = ({ array }) => {
     const handleAddString = () => {
         console.log(data)
         setItems(items => items.concat(data))
+        setData('')
     }
 
     return(<>
