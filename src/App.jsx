@@ -1,11 +1,12 @@
 import './App.css'
-import FocusableInput from './FocusableInput'
+import Counter from './Counter'
+
 
 function App() {
 
   return (
     <>
-      <FocusableInput/>
+      <Counter prop={0} />
     </>
   )
 }
