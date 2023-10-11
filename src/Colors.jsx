@@ -2,7 +2,7 @@ const Colors = ({ items }) => {
     return (
         <ul>
             {items.map((element) => 
-                <li>{element}</li>
+                <li key={element.id}>{element.name}</li>
             )}
         </ul>
     )
