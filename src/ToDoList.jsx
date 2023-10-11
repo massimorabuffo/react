@@ -16,6 +16,10 @@ const ToDoList = ({ array }) => {
         setData('')
     }
 
+    const handleReset = () => {
+        setItems([])
+    }
+
     return(<>
             <ul>
                 {items.map((element, index) => (
@@ -24,6 +28,7 @@ const ToDoList = ({ array }) => {
             </ul>
             <input type="text" value = {data} onChange={handleInput}/>
             <button onClick={handleAddString}>Push to add!</button>
+            <button onClick={handleReset}>Reset the list</button>
         </>)
 }
 
