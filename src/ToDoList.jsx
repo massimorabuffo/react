@@ -11,7 +11,6 @@ const ToDoList = ({ array }) => {
     }
 
     const handleAddString = () => {
-        console.log(data)
         setItems(items => items.concat(data))
         setData('')
     }
@@ -20,14 +19,25 @@ const ToDoList = ({ array }) => {
         setItems([])
     }
 
+    const handleRemoveSingleItem = (event) => {
+        const deletedItem = items.splice(event.target.id, 1);
+        const createNewArr = (element) => {
+            return element !== deletedItem;
+        }
+        setItems(items.filter(createNewArr));
+    }
+
     return(<>
             <ul>
                 {items.map((element, index) => (
-                    <li key={index}>{element}</li>
+                    <li key={index}>
+                        {element}
+                        <button id={index} onClick={handleRemoveSingleItem}>Remove this item</button>
+                    </li>
                 ))}
             </ul>
             <input type="text" value = {data} onChange={handleInput}/>
-            <button onClick={handleAddString}>Push to add!</button>
+            <button onClick={handleAddString} disabled={!data}>Push to add!</button>
             <button onClick={handleReset}>Reset the list</button>
         </>)
 }
