@@ -1,3 +1,4 @@
+import Counter from "./Counter"
 import Welcome from "./Welcome"
 import './index.css'
 
@@ -5,6 +6,7 @@ import './index.css'
 const Index = () => {
   return <>
           <Welcome className='welcome'/>
+          <Counter />
         </>
 }
 
