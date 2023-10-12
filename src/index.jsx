@@ -1,7 +1,8 @@
+import { Clock } from "./Clock"
 import Counter from "./Counter"
 import Login from "./Login"
 import Welcome from "./Welcome"
-import './index.css'
+import './index.scss'
 
 
 const Index = () => {
@@ -9,6 +10,7 @@ const Index = () => {
           <Welcome className='welcome'/>
           <Counter />
           <Login />
+          <Clock />
         </>
 }
 
