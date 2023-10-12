@@ -1,3 +1,5 @@
+// Ho dimenticato di creare un nuovo branch, quindi questo branch include sia l'esercizio 58 sia il 59, che sono concatenabili
+
 import { useState } from "react"
 
 const ToDoList = ({ array }) => {
