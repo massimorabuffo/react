@@ -2,3 +2,11 @@
   background-color: aqua;
   border: 3px solid red;
 }
+
+.loginInvalid{
+  background-color: red;
+}
+
+.loginValid{
+  background-color: green;
+}
