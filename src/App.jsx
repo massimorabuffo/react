@@ -5,7 +5,7 @@ import Container from './Container'
 function App() {
 
   return (
-    <Container >
+    <Container title={<h1>Hello, word!</h1>}>
       <Counter prop={0} />
     </ Container>
   )
