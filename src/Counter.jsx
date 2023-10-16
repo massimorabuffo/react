@@ -17,9 +17,9 @@ const Counter = () => {
     }
 
     return (<>
-            <button onClick={handleUpButton}>Up</button>
+            <button className="border border-black" onClick={handleUpButton}>Up</button>
             <div ref={countRef}>{count}</div>
-            <button onClick={handleDownButton}>Down</button>
+            <button className="border border-black" onClick={handleDownButton}>Down</button>
             </>)
             
 }
