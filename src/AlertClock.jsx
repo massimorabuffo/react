@@ -1,9 +1,11 @@
+import { LanguageContext } from "./LanguageContext";
+
 export function AlertClock() {
-    const alertTime = () => {
-        const time = new Date().toLocaleTimeString();
-        alert(`The current time is: ${time}.`)
-    }
+    const time = new Date().toLocaleTimeString();
+    
     return <>
-            <button onClick = {alertTime}>Click here to show the current time!</button>
+                <LanguageContext.Provider value="it">
+                    <div>{time}</div>
+                </LanguageContext.Provider>
             </>
 }
