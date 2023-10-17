@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 const GitHubUser = ({ username }) => {
     const [data, setData] = useState(null);
 
-    const fetchData = async () => {
+    const fetchData = async (username) => {
         try{
             const response = await fetch(`https://api.github.com/users/${username}`);
             const json = await response.json();
