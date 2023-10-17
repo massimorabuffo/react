@@ -1,5 +1,5 @@
 import { useState } from "react"
-import GitHubUser from "./GitHubUser";
+import GitHubUsers from "./GitHubUsers";
 
 export function App() {
     const [language, setLanguage] = useState('it');
@@ -9,6 +9,6 @@ export function App() {
     }
 
     return <>
-            <GitHubUser username='massimorabuffo'/>
+            <GitHubUsers />
             </>
 }
