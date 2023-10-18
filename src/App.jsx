@@ -5,6 +5,6 @@ import GitHubUsers from "./GitHubUsers";
 
 export function App() {
     return <>
-            <ControlledForm />
+            <GitHubUser username='massimorabuffo' />
             </>
 }

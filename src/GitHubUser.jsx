@@ -1,22 +1,8 @@
-import { useEffect, useState } from "react"
+import useGitHubUser from "./hookGitHubUser"
 
 const GitHubUser = ({ username }) => {
-    const [data, setData] = useState(null);
-
-    const fetchData = async (username) => {
-        try{
-            const response = await fetch(`https://api.github.com/users/${username}`);
-            const json = await response.json();
-            setData(json);
-        }catch(error){
-            console.error(error);
-        }
-    }
-
-    useEffect(() => {
-        fetchData(username);
-    }, [username])
-
+    const {data} = useGitHubUser(username)
+  
     return <>
             <h3>{data.name}</h3>
             <h3>{data.login}</h3>
