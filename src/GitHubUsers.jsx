@@ -1,6 +1,26 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import GitHubUser from "./GitHubUser";
-import React from "react";
+
+const users = ['massimorabuffo', 'massimorabuffo', 'massimorabuffo'];
+
+const GitHubUsers = () => {
+    const [value, setValue] = useState(null);
+
+    const handleClickElement = (event) => {
+        setValue(event.target.textContent);
+    }
+    console.log(value)
+
+    return <>
+            {value && <GitHubUser username={value} />} 
+            <ul>
+                {users.map(el => <li onClick={handleClickElement} key={Math.random()}>{el}</li>)}
+            </ul>
+            </>
+}
+
+ export default GitHubUsers
+
 
 // const GitHubUsers = () => {
 // const [data, setData] = useState(null);
@@ -32,24 +52,3 @@ import React from "react";
 //         </ul>
 //        </>
 // }
-
-const users = ['massimorabuffo', 'massimorabuffo', 'massimorabuffo'];
-
-const GitHubUsers = () => {
-    const [value, setValue] = useState(null);
-
-    const handleClickElement = (event) => {
-        setValue(event.target.textContent);
-        console.log(value)
-    }
-
-    return <><React.StrictMode>
-            <ul>
-                {users.map(el => <li onClick={handleClickElement} key={Math.random()}>{el}</li>)}
-                {value !== null && <GitHubUser username={value} />} 
-            </ul>
-            </React.StrictMode>
-            </>
-}
-
- export default GitHubUsers
