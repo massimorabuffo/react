@@ -4,51 +4,22 @@ import GitHubUser from "./GitHubUser";
 const users = ['massimorabuffo', 'massimorabuffo', 'massimorabuffo'];
 
 const GitHubUsers = () => {
-    const [value, setValue] = useState(null);
+    const [data, setData] = useState(null);
 
-    const handleClickElement = (event) => {
-        setValue(event.target.textContent);
+    const handleInput = (event) => {
+        setData(event.target.value);
     }
-    console.log(value)
+
+    const handleSubmit = () => {
+
+    }
 
     return <>
-            {value && <GitHubUser username={value} />} 
-            <ul>
-                {users.map(el => <li onClick={handleClickElement} key={Math.random()}>{el}</li>)}
-            </ul>
+            <form onSubmit={handleSubmit}>
+                <input type="text" value={data} onChange={handleInput} />
+                <button>Search User</button>
+            </form>
             </>
 }
 
  export default GitHubUsers
-
-
-// const GitHubUsers = () => {
-// const [data, setData] = useState(null);
-// const [user, setUser] = useState(null);
-
-//     const fetchData = async () => {
-//         try{
-//             const response = await fetch(`https://api.github.com/users?since=XXX`)
-//             const json = await response.json();
-//             console.log(json);
-//             setData(json);
-//         }catch(error) {
-//             console.error(error);
-//         }
-//     }
-
-//     useEffect(() => {
-//         fetchData();
-//     }, [])
-
-// const handleClickElement = (event) => {
-//     setUser(event.target.textContent);
-// }
-
-// return <>
-//         {user && <GitHubUser username={user}/>}
-//         <ul>
-//             {data.map(el => <li key={el.id} onClick={handleClickElement}>{el.login}</li>)}
-//         </ul>
-//        </>
-// }
