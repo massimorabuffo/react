@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Clock } from './Clock'
 import { MouseClicker } from './MouseClicker'
+import CounterDisplay from './CounterDisplay'
 
 export function Counter({initialValue, incrementAmount, decrementAmount}) {
     const [counter, setCounter] = useState(initialValue)
@@ -9,25 +10,21 @@ export function Counter({initialValue, incrementAmount, decrementAmount}) {
     }, [counter])
 
     function handleIncrement() {
-        setCounter(counter + incrementAmount)
+        setCounter(c => c + incrementAmount)
     }
     function handleDecrement() {
-        setCounter(counter - decrementAmount)
+        setCounter(c => c - decrementAmount)
     }
     function handleReset() {
         setCounter(initialValue)
     }
 
     return <>
-            <CounterDisplay count = {counter}/>
-            <button onClick={handleIncrement}>Click to increment!</button>
-            <button onClick={handleDecrement}>Click to decrement!</button>
-            <button onClick={handleReset}>Click to reset!</button>
-            <Clock />
-            <MouseClicker name="one"/>
+                <CounterDisplay count = {counter}/>
+                <button onClick={handleIncrement}>Click to increment!</button>
+                <button onClick={handleDecrement}>Click to decrement!</button>
+                <button onClick={handleReset}>Click to reset!</button>
+                <Clock />
+                <MouseClicker name="one"/>
             </>
-}
-
-function CounterDisplay({count}) {
-    return <h2>{count}</h2>
 }
