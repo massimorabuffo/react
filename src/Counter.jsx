@@ -7,10 +7,10 @@ export function Counter({initialValue, incrementAmount, decrementAmount}) {
     }, [counter])
 
     function handleIncrement() {
-        setCounter(counter + incrementAmount)
+        setCounter(c => + incrementAmount)
     }
     function handleDecrement() {
-        setCounter(counter - decrementAmount)
+        setCounter(c => - decrementAmount)
     }
     function handleReset() {
         setCounter(initialValue)
