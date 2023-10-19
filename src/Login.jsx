@@ -20,10 +20,6 @@ function Login({login}) {
     })
   }
 
-  function handleLogin() {
-    login(data);
-  }
-
   function handleReset() {
     setData((data) => {
         return{
@@ -36,6 +32,7 @@ function Login({login}) {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+    login(data);
   }
 
   return <>
