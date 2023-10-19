@@ -1,24 +1,12 @@
 import { AlertClock } from "./AlertClock"
-import { handleTime } from "./AlertClock"
-
-function Welcome({ name, age }) {
-    return (
-        <>
-            {name ? <p>Welcome, {name}!</p> : <p>Please, insert a name!</p>}
-            {<Age age={ age } />}
-        </>
-    )
-}
-
-function Age({ age }) {
-    return (
-        <>
-            {age > 18 ? <p>Your age is {age}.</p> : <p>You are very young!</p>}
-        </>
-    )
-}
+import { Welcome } from "./Welcome";
 
 export function App() {
+    const handleTime = () => {
+        const time = new Date().toLocaleTimeString();
+        return alert(`The current time is: ${time}.`)
+    }
+
     return <>
             <Welcome name="John" age={18}/>
             <AlertClock alertTime = {handleTime}/>
