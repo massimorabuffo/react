@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import CounterDisplay from './CounterDisplay'
 
 
 export function Counter({initialValue, incrementAmount, decrementAmount}) {
@@ -19,8 +20,4 @@ export function Counter({initialValue, incrementAmount, decrementAmount}) {
                 <button onClick={handleDecrement}>Click to decrement!</button>
                 <button onClick={handleReset}>Click to reset!</button>
             </>
-}
-
-function CounterDisplay({count}) {
-    return <h2>{count}</h2>
 }
