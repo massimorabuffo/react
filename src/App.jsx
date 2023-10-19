@@ -1,24 +1,4 @@
-import { useState } from "react"
-
-function Welcome({name}) {
-  return <>
-          <p>Welcome, {name}!</p>
-          </>
-}
-
-function InteractiveWelcome() {
-  const [value, setValue] = useState('')
-
-  function handleChange(event) {
-    const value = event.target.value;
-    setValue(value);
-  }
-
-  return <>
-          <input value = {value} onChange={handleChange} type="text"/>
-          <Welcome name= {value}/>
-        </>
-}
+import { InteractiveWelcome } from "./InteractiveWelcome"
 
 function App() {
   return <>
