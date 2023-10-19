@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Clock } from './Clock'
-import { MultiButton } from './MultiButton'
+import CounterDisplay from './CounterDisplay'
 
 export function Counter({initialValue, incrementAmount, decrementAmount}) {
     const [counter, setCounter] = useState(initialValue)
@@ -9,25 +9,20 @@ export function Counter({initialValue, incrementAmount, decrementAmount}) {
     }, [counter])
 
     function handleIncrement() {
-        setCounter(counter + incrementAmount)
+        setCounter(c => c + incrementAmount)
     }
     function handleDecrement() {
-        setCounter(counter - decrementAmount)
+        setCounter(c => c - decrementAmount)
     }
     function handleReset() {
         setCounter(initialValue)
     }
 
     return <>
-            <CounterDisplay count = {counter}/>
-            <button onClick={handleIncrement}>Click to increment!</button>
-            <button onClick={handleDecrement}>Click to decrement!</button>
-            <button onClick={handleReset}>Click to reset!</button>
-            <Clock />
-            <MultiButton name1="one" name2="two" name3="three"/>
+                <CounterDisplay count = {counter}/>
+                <button onClick={handleIncrement}>Click to increment!</button>
+                <button onClick={handleDecrement}>Click to decrement!</button>
+                <button onClick={handleReset}>Click to reset!</button>
+                <Clock />
             </>
-}
-
-function CounterDisplay({count}) {
-    return <h2>{count}</h2>
 }
