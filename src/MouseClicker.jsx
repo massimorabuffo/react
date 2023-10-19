@@ -6,8 +6,8 @@ export function MouseClicker({name}) {
         console.log(event.currentTarget.src)
     }
     return <button name = {name} onClick={handleButtonEvent}>
-            <img src={"source of the image"}width={25} height={25} onClick={handleImgClick}/>
-            Click here to see "{name}" on console!
+                <img src={"source of the image"}width={25} height={25} onClick={handleImgClick}/>
+                Click here to see "{name}" on console!
            </button>
 }
 
