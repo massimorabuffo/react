@@ -50,8 +50,4 @@ function Login({login}) {
          </>
 }
 
-// Esercizio aggiornato usando il metodo preventDefault che viene spiegato nella lezione sugli uncontrolled forms, mentre questo esercizio
-// è classificato come controlled forms.
-
-
 export default Login
