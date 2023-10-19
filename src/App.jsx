@@ -1,19 +1,5 @@
-function Welcome({ name, age }) {
-    return (
-        <>
-            {name ? <p>Welcome, {name}!</p> : <p>Please, insert a name!</p>}
-            {<Age age={ age } />}
-        </>
-    )
-}
+import { Welcome } from "./Welcome";
 
-function Age({ age }) {
-    return (
-        <>
-            {age > 18 ? <p>Your age is {age}.</p> : <p>You are very young!</p>}
-        </>
-    )
-}
 
 export function App() {
     return <Welcome name="John" age={18}/>
