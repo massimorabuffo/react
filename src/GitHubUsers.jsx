@@ -18,15 +18,15 @@ const GitHubUsers = () => {
     return <>
             <form onSubmit={handleSubmit}>
                 <input type="text" value={data} onChange={handleInput} />
-                <button>Search User</button>
+                <button type="submit">Search User</button>
             </form>
-            {users && <>
-                        <ul>
-                            {users.map(el => {
-                                <li key={Math.random}>{el}</li>
-                            })}
-                        </ul>
-                    </>}
+                <ul>
+                    {users.map(el => (
+                        <li key={el}>
+                            <GitHubUser username={el} />
+                        </li>
+                    ))}
+                </ul>
             </>
 }
 
