@@ -14,6 +14,7 @@ const App = () => {
             <Route path="/" element={<Welcome name='world'/>}/>
             <Route path='/counter' element={<Counter />} />
             <Route path="users/:username" element={<ShowGitHubUser />} />
+            <Route path="*" element={<p>Not found</p>} />
           </Routes>
         </>
 }
