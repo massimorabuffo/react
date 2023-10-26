@@ -1,9 +1,10 @@
 import useGitHubUser from "./hookGitHubUser"
 
 const GitHubUser = ({ username }) => {
-    const {user, error} = useGitHubUser(username)
+    const {user, error, onNewCall} = useGitHubUser(username)
   
     return <>
+    <button onClick={onNewCall}>Reload the data</button>
     {(!user && !error) && <div>Loading...</div>}
     {error && <h3>Error</h3>}
     {(user && !error) &&
