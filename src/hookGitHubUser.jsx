@@ -1,23 +1,14 @@
-import { useEffect, useState } from "react"
+import useSWr from "SWR"
+
+const fetcher = url => fetch(url).then(response => response.json());
 
 const useGitHubUser = (username) => {
-    const [data, setData] = useState(null);
+    const {data, error} = useSWr(`https://api.github.com/users/${username}`, fetcher);
 
-    const fetchData = async (username) => {
-        try{
-            const response = await fetch(`https://api.github.com/users/${username}`);
-            const json = await response.json();
-            setData(json);
-        }catch(error){
-            console.error(error);
-        }
+    return {
+        user: data,
+        error,
     }
-
-    useEffect(() => {
-        fetchData(username);
-    }, [username])
-
-    return {data}
 }
 
 export default useGitHubUser

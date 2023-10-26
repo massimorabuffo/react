@@ -1,15 +1,16 @@
 import useGitHubUser from "./hookGitHubUser"
 
 const GitHubUser = ({ username }) => {
-    const {data} = useGitHubUser(username)
+    const {user, error} = useGitHubUser(username)
   
     return <>
-    {!data && <div>Loading...</div>}
-    {data && 
+    {(!user && !error) && <div>Loading...</div>}
+    {error && <h3>Error</h3>}
+    {(user && !error) &&
         <>
-            <h3>{data.name}</h3>
-            <h3>{data.login}</h3>
-            <img src={data.avatar_url} alt="avatar" />
+            <h3>{user.name}</h3>
+            <h3>{user.login}</h3>
+            <img src={user.avatar_url} alt="avatar" />
         </>
     }  
 </>
